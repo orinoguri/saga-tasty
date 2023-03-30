@@ -13,9 +13,9 @@ function App() {
 			{/* <Navbar /> */}
 			<main role="main">
 				<Routes>
-					<Route path="/" element={<Landing />} />
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/about" element={<About />} />
+					<Route path="/saga-tasty/" element={<Landing />} />
+					<Route path="/saga-tasty/profile" element={<Profile />} />
+					<Route path="/saga-tasty/about" element={<About />} />
 				</Routes>
 			</main>
 			<Footer />
