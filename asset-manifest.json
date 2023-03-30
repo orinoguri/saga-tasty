@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/saga-tasty/static/css/main.073c9b0a.css",
-    "main.js": "/saga-tasty/static/js/main.97e8bbc6.js",
+    "main.js": "/saga-tasty/static/js/main.eba4e8b4.js",
     "static/js/787.6eb29c39.chunk.js": "/saga-tasty/static/js/787.6eb29c39.chunk.js",
-    "static/media/logo.svg": "/saga-tasty/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/saga-tasty/index.html",
     "main.073c9b0a.css.map": "/saga-tasty/static/css/main.073c9b0a.css.map",
-    "main.97e8bbc6.js.map": "/saga-tasty/static/js/main.97e8bbc6.js.map",
+    "main.eba4e8b4.js.map": "/saga-tasty/static/js/main.eba4e8b4.js.map",
     "787.6eb29c39.chunk.js.map": "/saga-tasty/static/js/787.6eb29c39.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.97e8bbc6.js"
+    "static/js/main.eba4e8b4.js"
   ]
 }
