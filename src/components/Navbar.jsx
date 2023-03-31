@@ -26,7 +26,7 @@ function Navbar() {
 						<li className="nav-item">
 							<button
 								className="nav-link px-2 text-white link-button"
-								data-page="/"
+								data-page="/saga-tasty"
 								onClick={goToPage}
 							>
 								HOME
@@ -35,7 +35,7 @@ function Navbar() {
 						<li className="nav-item">
 							<button
 								className="nav-link px-2 text-white link-button"
-								data-page="/about"
+								data-page="/saga-tasty/about"
 								onClick={goToPage}
 							>
 								ABOUT
