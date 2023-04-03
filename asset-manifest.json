@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/saga-tasty/static/css/main.e8d05274.css",
-    "main.js": "/saga-tasty/static/js/main.46075dab.js",
+    "main.css": "/saga-tasty/static/css/main.813b2a7b.css",
+    "main.js": "/saga-tasty/static/js/main.4f6e528b.js",
     "static/js/787.6eb29c39.chunk.js": "/saga-tasty/static/js/787.6eb29c39.chunk.js",
-    "static/media/logo.png": "/saga-tasty/static/media/logo.135bfff6baea094e8f4c.png",
+    "static/media/logo.png": "/saga-tasty/static/media/logo.9a32afc4b3b390cb2cea.png",
+    "static/media/sagatasty.png": "/saga-tasty/static/media/sagatasty.2cd7475b71ca55f0237d.png",
     "index.html": "/saga-tasty/index.html",
-    "main.e8d05274.css.map": "/saga-tasty/static/css/main.e8d05274.css.map",
-    "main.46075dab.js.map": "/saga-tasty/static/js/main.46075dab.js.map",
+    "main.813b2a7b.css.map": "/saga-tasty/static/css/main.813b2a7b.css.map",
+    "main.4f6e528b.js.map": "/saga-tasty/static/js/main.4f6e528b.js.map",
     "787.6eb29c39.chunk.js.map": "/saga-tasty/static/js/787.6eb29c39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8d05274.css",
-    "static/js/main.46075dab.js"
+    "static/css/main.813b2a7b.css",
+    "static/js/main.4f6e528b.js"
   ]
 }
