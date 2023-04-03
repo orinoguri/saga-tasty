@@ -4,21 +4,21 @@ import { Row } from "react-bootstrap";
 function About() {
 	return (
 		<Row>
-			<h1>About</h1>
+			<h1>메모</h1>
 			<h3>
-				This is a Tasty Saga/Food Fantasy content conservation project. The
-				content has been amassed from the game files in response to the
-				current status of the game. The main goal of this project will be
-				display as much information about the Food Souls as possible. The
-				priority will be towards the 5-chapter Food Soul stories but will
-				eventually work towards displaying more combat related information
-				such as skills and artifacts.
+				테사 상황이 부란해서 제가 게임 파일애서 식신 이야기들 다 꺼냈습니다.
+				아직 게임애 데이터가 헐신 많은대 일다 이것이라고 읽어주면돼용.
 			</h3>
 			<br />
 			<h3>
-				As of right now, I don't know if I will publish CN/JP/global content
-				as they already have their respective active wiki.
+				This is a Tasty Sage/Food Fantasy project I embarked on in response
+				to the current state of the game. I figured it would be a huge waste
+				for everything to go before players had a chance to read through all
+				the content so I took it upon myself to rip the data from the game
+				file to share to everyone. More things will be added in due time but
+				for now enjoy the content ^^
 			</h3>
+			<h3>- 오리너구리</h3>
 		</Row>
 	);
 }

@@ -73,7 +73,7 @@ function Landing(props) {
 					<p>Coming Soon</p>
 				</Tab>
 			</Tabs> */}
-			<h1 style={{ marginBottom: "20px" }}>식신</h1>
+			<h1 style={{ marginBottom: "20px" }}>식신 백과사전</h1>
 			<Row className="justify-content-center">
 				<Col sm={2}>
 					<img src={splogo} alt="sp" />

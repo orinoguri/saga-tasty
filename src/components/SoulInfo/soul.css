@@ -14,14 +14,14 @@
 }
 
 .tab-story {
-   padding: 20px;
-   white-space: "pre-line";
+   padding: 3%;
    text-align: start;
 }
 
 .soul-tab {
    font-size: large;
    justify-content: center;
+   font-weight: 700;
 }
 
 .coming-soon {
@@ -31,5 +31,14 @@
 
 .soul-info-label {
    font-weight: 700;
+   text-align: start;
+}
+
+.voice-content {
+   padding-top: 20px;
+}
+
+.back-button {
+
    text-align: start;
 }

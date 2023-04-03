@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Col, Row, Tabs, Tab } from "react-bootstrap";
-import { useLocation, useParams } from "react-router-dom";
+import { Col, Row, Tabs, Tab, Button } from "react-bootstrap";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import defenseIcon from "../../assets/defenseicon.png";
 import strengthIcon from "../../assets/strengthicon.png";
 import supportIcon from "../../assets/supporticon.png";
@@ -33,6 +33,7 @@ function Soul(props) {
 	});
 	const params = useParams();
 	const { state } = useLocation();
+	const navigate = useNavigate();
 	// eslint-disable-next-line
 	useEffect(
 		useCallback(() => {
@@ -68,10 +69,10 @@ function Soul(props) {
 		}
 	};
 
-	function SoulTable(label, info) {
+	function soulTable(label, info) {
 		return (
 			<Row>
-				<Col sm={3} className="soul-info-label">
+				<Col lg={4} className="soul-info-label">
 					<div>{label}</div>
 				</Col>
 				<Col>
@@ -81,8 +82,41 @@ function Soul(props) {
 		);
 	}
 
+	const soulStoryTab = (chapter) => {
+		return (
+			<>
+				<h3 style={{ marginTop: "20px" }}>{card.story[chapter].name}</h3>
+				<div className="tab-story">
+					{card.story[chapter].descr.split("\n").map((str) => (
+						<p>{str}</p>
+					))}
+				</div>
+			</>
+		);
+	};
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
+	const onBackClick = (e) => {
+		navigate(e.currentTarget.dataset.page);
+	};
+
 	return (
 		<div>
+			<div className="back-button">
+				<Button
+					variant="light"
+					onClick={onBackClick}
+					data-page="/saga-tasty"
+				>
+					Back
+				</Button>
+			</div>
 			<Row>
 				<Col sm={4}>
 					{card.profile ? (
@@ -90,14 +124,16 @@ function Soul(props) {
 							<div>{card.name}</div>
 							<img src={attrImg()} alt="attr" />
 							<div>{card.attr}</div>
-							{SoulTable("유형", card.profile.type)}
-							{SoulTable("발원지", card.profile.origin)}
-							{SoulTable("탄생 시기", card.profile.age)}
-							{SoulTable("성격", card.profile.nature)}
-							{SoulTable("키", card.profile.height)}
-							{SoulTable("관계", "[WIP]")}
-							{SoulTable("모토", card.profile.motto)}
-							{SoulTable("소개", card.descr)}
+							{soulTable("유형", card.profile.type)}
+							{soulTable("발원지", card.profile.origin)}
+							{soulTable("탄생 시기", card.profile.age)}
+							{soulTable("성격", card.profile.nature)}
+							{soulTable("키", card.profile.height)}
+							{soulTable("관계", "[WIP]")}
+							<div style={{ fontWeight: "700" }}>모토</div>
+							<div>{card.profile.motto}</div>
+							<div style={{ fontWeight: "700" }}>소개</div>
+							<div>{card.descr}</div>
 						</>
 					) : (
 						<div>error</div>
@@ -107,64 +143,50 @@ function Soul(props) {
 					<Tabs defaultActiveKey="story" className="soul-tab" justify>
 						<Tab eventKey="story" title="이아기">
 							{card?.story?.["1"]?.descr ? (
-								<Tabs defaultActiveKey="first" className="soul-tab">
-									<Tab eventKey="first" title={card.story["1"].name}>
-										<div className="tab-story">
-											{card.story["1"].descr
-												.split("\n")
-												.map((str) => (
-													<p>{str}</p>
-												))}
-										</div>
+								<Tabs
+									defaultActiveKey="first"
+									className="soul-tab"
+									justify
+								>
+									<Tab eventKey="first" title="I.">
+										{soulStoryTab("1")}
 									</Tab>
-									<Tab eventKey="second" title={card.story["2"].name}>
-										<div className="tab-story">
-											{card.story["2"].descr
-												.split("\n")
-												.map((str) => (
-													<p>{str}</p>
-												))}
-										</div>
+									<Tab eventKey="second" title="II.">
+										{soulStoryTab("2")}
 									</Tab>
-									<Tab eventKey="third" title={card.story["3"].name}>
-										<div className="tab-story">
-											{card.story["3"].descr
-												.split("\n")
-												.map((str) => (
-													<p>{str}</p>
-												))}
-										</div>
+									<Tab eventKey="third" title="III.">
+										{soulStoryTab("3")}
 									</Tab>
-									<Tab eventKey="fourth" title={card.story["4"].name}>
-										<div className="tab-story">
-											{card.story["4"].descr
-												.split("\n")
-												.map((str) => (
-													<p>{str}</p>
-												))}
-										</div>
+									<Tab eventKey="fourth" title="IV.">
+										{soulStoryTab("4")}
 									</Tab>
-									<Tab eventKey="fifth" title={card.story["5"].name}>
-										<div className="tab-story">
-											{card.story["5"].descr
-												.split("\n")
-												.map((str) => (
-													<p>{str}</p>
-												))}
-										</div>
+									<Tab eventKey="fifth" title="V.">
+										{soulStoryTab("5")}
 									</Tab>
 								</Tabs>
 							) : (
 								<div className="coming-soon">Coming Soon</div>
 							)}
 						</Tab>
+						<Tab eventKey="voice" title="오디오 주파수">
+							<div className="voice-content">
+								{card.voice &&
+									card.voice.map((voice) => {
+										return soulTable(voice.name, voice.descr);
+									})}
+							</div>
+						</Tab>
 						<Tab eventKey="artifact" title="소울왜폰">
 							<div className="coming-soon">Coming Soon</div>
 						</Tab>
-						<Tab eventKey="other" title="기타">
-							<div className="coming-soon">Coming Soon</div>
-						</Tab>
 					</Tabs>
+					<Button
+						onClick={scrollToTop}
+						variant="light"
+						style={{ marginTop: "10px" }}
+					>
+						Top
+					</Button>
 				</Col>
 			</Row>
 		</div>
