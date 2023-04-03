@@ -2,10 +2,34 @@
    display: inline-block;
    flex-direction: row;
    margin: 10px;
-   width: 100px;
-   height: 100px;
+   width: 80px;
+   height: 80px;
    align-items: center;
    justify-content: center;
 }
 
-.soul-name {}
+.attr-img {
+   width: 30px;
+   height: auto;
+}
+
+.tab-story {
+   padding: 20px;
+   white-space: "pre-line";
+   text-align: start;
+}
+
+.soul-tab {
+   font-size: large;
+   justify-content: center;
+}
+
+.coming-soon {
+   padding: 50px;
+   font-size: larger;
+}
+
+.soul-info-label {
+   font-weight: 700;
+   text-align: start;
+}

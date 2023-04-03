@@ -1,9 +1,9 @@
 import "./App.css";
 import React from "react";
-// import Navbar from "./components/Navbar";
+import Nav from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
 import Landing from "./components/Landing";
-import Profile from "./components/SoulInfo/Profile";
+import Soul from "./components/SoulInfo/Soul";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import { Container } from "react-bootstrap";
@@ -11,12 +11,12 @@ import { Container } from "react-bootstrap";
 function App() {
 	return (
 		<div className="App">
-			{/* <Navbar /> */}
-			<Container>
+			<Nav />
+			<Container className="app-container">
 				<main role="main">
 					<Routes>
 						<Route path="/saga-tasty/" element={<Landing />} />
-						<Route path="/saga-tasty/profile" element={<Profile />} />
+						<Route path="/saga-tasty/:id" element={<Soul />} />
 						<Route path="/saga-tasty/about" element={<About />} />
 					</Routes>
 				</main>

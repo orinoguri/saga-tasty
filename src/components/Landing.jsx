@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
-// import { Col, Row } from "react-bootstrap";
+import {
+	Col,
+	Row,
+	// Tab, Tabs
+} from "react-bootstrap";
 import SoulCard from "./SoulInfo/SoulCard";
 import logo from "../assets/logo.png";
 import "./landing.css";
+import splogo from "../assets/splogo.png";
+import urlogo from "../assets/urlogo.png";
+import srlogo from "../assets/srlogo.png";
+import rlogo from "../assets/rlogo.png";
+import mlogo from "../assets/mlogo.png";
 
 function Landing(props) {
 	const [soulList, setSoulList] = useState({
@@ -55,17 +64,56 @@ function Landing(props) {
 	};
 	return (
 		<div>
-			<h1>식신</h1>
-			<h2>SP</h2>
-			<div className="landing-row">{soulList.sp}</div>
-			<h2>UR</h2>
-			<div className="landing-row">{soulList.ur}</div>
-			<h2>SR</h2>
-			<div className="landing-row">{soulList.sr}</div>
-			<h2>R</h2>
-			<div className="landing-row">{soulList.r}</div>
-			<h2>M</h2>
-			<div className="landing-row">{soulList.m}</div>
+			{/* <Tabs className="landing-tabs">
+				<Tab eventKey="All" title="Food Souls"></Tab>
+				<Tab eventKey="Artifacts" title="Artifacts">
+					<p>Coming Soon</p>
+				</Tab>
+				<Tab eventKey="Future" title="Future">
+					<p>Coming Soon</p>
+				</Tab>
+			</Tabs> */}
+			<h1 style={{ marginBottom: "20px" }}>식신</h1>
+			<Row className="justify-content-center">
+				<Col sm={2}>
+					<img src={splogo} alt="sp" />
+				</Col>
+				<Col>
+					<div className="landing-row">{soulList.sp}</div>
+				</Col>
+			</Row>
+			<Row className="justify-content-center">
+				<Col sm={2}>
+					<img src={urlogo} alt="ur" />
+				</Col>
+				<Col>
+					<div className="landing-row">{soulList.ur}</div>
+				</Col>
+			</Row>
+			<Row className="justify-content-center">
+				<Col sm={2}>
+					<img src={srlogo} alt="sr" />
+				</Col>
+				<Col>
+					<div className="landing-row">{soulList.sr}</div>
+				</Col>
+			</Row>
+			<Row className="justify-content-center">
+				<Col sm={2}>
+					<img src={rlogo} alt="r" />
+				</Col>
+				<Col>
+					<div className="landing-row">{soulList.r}</div>
+				</Col>
+			</Row>
+			<Row className="justify-content-center">
+				<Col sm={2}>
+					<img src={mlogo} alt="m" />
+				</Col>
+				<Col>
+					<div className="landing-row">{soulList.m}</div>
+				</Col>
+			</Row>
 		</div>
 	);
 }
