@@ -6,6 +6,7 @@ import strengthIcon from "../../assets/strengthicon.png";
 import supportIcon from "../../assets/supporticon.png";
 import magicIcon from "../../assets/magicicon.png";
 import "./soul.css";
+import Artifact from "./Artifact";
 
 function Soul(props) {
 	const [card, setCard] = useState({
@@ -31,6 +32,7 @@ function Soul(props) {
 			5: { name: "", descr: "" },
 		},
 	});
+	const [profile, setProfile] = useState(true);
 	const params = useParams();
 	const { state } = useLocation();
 	const navigate = useNavigate();
@@ -41,6 +43,9 @@ function Soul(props) {
 				setCard((prevState) => {
 					let newCard = { ...prevState };
 					newCard = state.payload;
+					newCard.arti = require("../../assets/cardArtiMod.json")[
+						newCard.id
+					];
 					return newCard;
 				});
 			} else {
@@ -48,6 +53,9 @@ function Soul(props) {
 				setCard((prevState) => {
 					let newCard = { ...prevState };
 					newCard = cardJson.filter((card) => card.name === params.id)[0];
+					newCard.arti = require("../../assets/cardArtiMod.json")[
+						newCard.id
+					];
 					return newCard;
 				});
 			}
@@ -72,7 +80,7 @@ function Soul(props) {
 	function soulTable(label, info) {
 		return (
 			<Row>
-				<Col lg={4} className="soul-info-label">
+				<Col sm={3} className="soul-info-label">
 					<div>{label}</div>
 				</Col>
 				<Col>
@@ -95,6 +103,10 @@ function Soul(props) {
 		);
 	};
 
+	const toggleProfile = () => {
+		setProfile(!profile);
+	};
+
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -107,38 +119,45 @@ function Soul(props) {
 	};
 
 	return (
-		<div>
-			<div className="back-button">
-				<Button
-					variant="light"
-					onClick={onBackClick}
-					data-page="/saga-tasty"
-				>
-					Back
-				</Button>
-			</div>
+		<div className="soul-profile">
 			<Row>
-				<Col sm={4}>
-					{card.profile ? (
-						<>
-							<div>{card.name}</div>
-							<img src={attrImg()} alt="attr" />
-							<div>{card.attr}</div>
-							{soulTable("유형", card.profile.type)}
-							{soulTable("발원지", card.profile.origin)}
-							{soulTable("탄생 시기", card.profile.age)}
-							{soulTable("성격", card.profile.nature)}
-							{soulTable("키", card.profile.height)}
-							{soulTable("관계", "[WIP]")}
-							<div style={{ fontWeight: "700" }}>모토</div>
-							<div>{card.profile.motto}</div>
-							<div style={{ fontWeight: "700" }}>소개</div>
-							<div>{card.descr}</div>
-						</>
-					) : (
-						<div>error</div>
-					)}
+				<Col sm={4} className="back-button">
+					<Button
+						variant="light"
+						onClick={onBackClick}
+						data-page="/saga-tasty"
+					>
+						Back
+					</Button>
+					<Button variant="light" onClick={toggleProfile}>
+						{profile ? "Hide" : "Show"}
+					</Button>
 				</Col>
+			</Row>
+			<h2>{card.name}</h2>
+			<Row>
+				{profile && (
+					<Col sm={4}>
+						{card.profile ? (
+							<>
+								<img src={attrImg()} alt="attr" />
+								<div>{card.attr}</div>
+								{soulTable("유형", card.profile.type)}
+								{soulTable("발원지", card.profile.origin)}
+								{soulTable("탄생 시기", card.profile.age)}
+								{soulTable("성격", card.profile.nature)}
+								{soulTable("키", card.profile.height)}
+								{soulTable("관계", "[WIP]")}
+								<div style={{ fontWeight: "700" }}>모토</div>
+								<div>{card.profile.motto}</div>
+								<div style={{ fontWeight: "700" }}>소개</div>
+								<div>{card.descr}</div>
+							</>
+						) : (
+							<div>error</div>
+						)}
+					</Col>
+				)}
 				<Col>
 					<Tabs defaultActiveKey="story" className="soul-tab" justify>
 						<Tab eventKey="story" title="이아기">
@@ -177,7 +196,11 @@ function Soul(props) {
 							</div>
 						</Tab>
 						<Tab eventKey="artifact" title="소울왜폰">
-							<div className="coming-soon">Coming Soon</div>
+							{card.arti?.node1 ? (
+								<Artifact arti={card.arti} />
+							) : (
+								<div className="coming-soon">없어용</div>
+							)}
 						</Tab>
 					</Tabs>
 					<Button

@@ -73,10 +73,12 @@ function Landing(props) {
 					<p>Coming Soon</p>
 				</Tab>
 			</Tabs> */}
-			<h1 style={{ marginBottom: "20px" }}>식신 백과사전</h1>
+			<h1 style={{ marginBottom: "20px", marginTop: "20px" }}>
+				식신 백과사전
+			</h1>
 			<Row className="justify-content-center">
 				<Col sm={2}>
-					<img src={splogo} alt="sp" />
+					<img className="rarity-logo" src={splogo} alt="sp" />
 				</Col>
 				<Col>
 					<div className="landing-row">{soulList.sp}</div>
@@ -84,7 +86,7 @@ function Landing(props) {
 			</Row>
 			<Row className="justify-content-center">
 				<Col sm={2}>
-					<img src={urlogo} alt="ur" />
+					<img className="rarity-logo" src={urlogo} alt="ur" />
 				</Col>
 				<Col>
 					<div className="landing-row">{soulList.ur}</div>
@@ -92,7 +94,7 @@ function Landing(props) {
 			</Row>
 			<Row className="justify-content-center">
 				<Col sm={2}>
-					<img src={srlogo} alt="sr" />
+					<img className="rarity-logo" src={srlogo} alt="sr" />
 				</Col>
 				<Col>
 					<div className="landing-row">{soulList.sr}</div>
@@ -100,7 +102,7 @@ function Landing(props) {
 			</Row>
 			<Row className="justify-content-center">
 				<Col sm={2}>
-					<img src={rlogo} alt="r" />
+					<img className="rarity-logo" src={rlogo} alt="r" />
 				</Col>
 				<Col>
 					<div className="landing-row">{soulList.r}</div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import sagatasty from "../assets/sagatasty.png";
+import "./landing.css";
 
 function Nav() {
 	const navigate = useNavigate();
@@ -26,10 +27,9 @@ function Nav() {
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span className="navbar-toggler-icon">Home</span>
-					<span className="navbar-toggler-icon">About</span>
+					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse">
+				<div className="collapse navbar-collapse" id="navbarsExample04">
 					<ul className="navbar-nav me-auto mb-2 mb-md-0">
 						<li className="nav-item">
 							<button
@@ -51,6 +51,7 @@ function Nav() {
 							</button>
 						</li>
 					</ul>
+					<div className="text-end"></div>
 				</div>
 			</Container>
 		</nav>

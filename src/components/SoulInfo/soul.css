@@ -39,6 +39,56 @@
 }
 
 .back-button {
+   display: flex;
+   position: absolute;
+   justify-content: space-between;
+}
 
-   text-align: start;
+.table-row {
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.arti-descr {
+   border-width: 1px;
+   border-color: black;
+}
+
+.arti-label {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-weight: 700;
+}
+
+.row-one-label {
+   margin-top: 10px;
+}
+
+.atk {
+   background-color: rgb(209, 255, 255);
+}
+
+.hp {
+   background-color: rgb(255, 218, 218)
+}
+
+.def {
+   background-color: rgb(203, 226, 255)
+}
+
+.crate {
+   background-color: rgb(255, 255, 213)
+}
+
+.cdmg {
+   background-color: rgb(230, 212, 255);
+}
+
+.spd {
+   background-color: rgb(198, 255, 168);
+}
+
+.soul-profile button {
+   width: 80px;
 }
