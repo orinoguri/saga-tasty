@@ -59,7 +59,7 @@ function Soul(props) {
 					return newCard;
 				});
 			}
-		}, [state.type, state.payload, params.id]),
+		}, [state?.type, state?.payload, params?.id]),
 		[]
 	);
 	const attrImg = () => {
@@ -79,14 +79,31 @@ function Soul(props) {
 
 	function soulTable(label, info) {
 		return (
-			<Row>
-				<Col sm={3} className="soul-info-label">
-					<div>{label}</div>
-				</Col>
-				<Col>
-					<div>{info}</div>
-				</Col>
-			</Row>
+			<>
+				<Row>
+					<Col sm={3} className="soul-info-label">
+						<div>{label}</div>
+					</Col>
+					<Col>
+						<div>{info}</div>
+					</Col>
+				</Row>
+			</>
+		);
+	}
+	function voiceTable(label, info) {
+		return (
+			<>
+				<Row className="voice-table">
+					<Col sm={3} style={{ fontWeight: "700" }}>
+						<div>{label}</div>
+					</Col>
+					<Col>
+						<div>{info}</div>
+					</Col>
+				</Row>
+				<hr />
+			</>
 		);
 	}
 
@@ -121,7 +138,7 @@ function Soul(props) {
 	return (
 		<div className="soul-profile">
 			<Row>
-				<Col sm={4} className="back-button">
+				<Col md={4} className="back-button">
 					<Button
 						variant="light"
 						onClick={onBackClick}
@@ -137,7 +154,7 @@ function Soul(props) {
 			<h2>{card.name}</h2>
 			<Row>
 				{profile && (
-					<Col sm={4}>
+					<Col md={4}>
 						{card.profile ? (
 							<>
 								<img src={attrImg()} alt="attr" />
@@ -148,8 +165,10 @@ function Soul(props) {
 								{soulTable("성격", card.profile.nature)}
 								{soulTable("키", card.profile.height)}
 								{soulTable("관계", "[WIP]")}
+								<hr />
 								<div style={{ fontWeight: "700" }}>모토</div>
 								<div>{card.profile.motto}</div>
+								<hr />
 								<div style={{ fontWeight: "700" }}>소개</div>
 								<div>{card.descr}</div>
 							</>
@@ -191,11 +210,11 @@ function Soul(props) {
 							<div className="voice-content">
 								{card.voice &&
 									card.voice.map((voice) => {
-										return soulTable(voice.name, voice.descr);
+										return voiceTable(voice.name, voice.descr);
 									})}
 							</div>
 						</Tab>
-						<Tab eventKey="artifact" title="소울왜폰">
+						<Tab eventKey="artifact" title="소울웨폰">
 							{card.arti?.node1 ? (
 								<Artifact arti={card.arti} />
 							) : (

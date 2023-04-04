@@ -7,9 +7,9 @@ function About() {
 			<h1>메모</h1>
 			<h3>
 				테사 상황이 부란해서 제가 게임 파일애서 식신 이야기들 다 꺼냈습니다.
-				아직 게임애 데이터가 헐신 많은대 일다 이것이라고 읽어주면돼용.
+				아직 게임애 데이터가 헐신 많은대 시간 걸러서... ㅠㅠ
 			</h3>
-			<br />
+			<hr />
 			<h3>
 				This is a Tasty Sage/Food Fantasy project I embarked on in response
 				to the current state of the game. I figured it would be a huge waste

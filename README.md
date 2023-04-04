@@ -5,12 +5,14 @@ Saga Tasty is a conservation project for the game Food Fantasy of various conten
 ## Project Goals
 
 -  Add all of the Food Souls published in KR version of the game
--  Add all of the translated stories (so no CN/JP/Global version for the time being)
+-  Add all of the translated stories
+-  Implement toggles for Food Soul skills and Artifact
+-  Make it more mobile friendly
 
 ## Future Goals (no timeline for when it will happen)
 
--  Add all officially translated Artifact descriptions
--  Improve the UI and
+-  Fun infographs like sorting fs by height, place fs in map by country, etc.
+-  Improve the UI
 
 ### Notes to self
 

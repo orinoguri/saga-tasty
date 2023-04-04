@@ -33,7 +33,7 @@ function Artifact(props) {
 			<Row className={`table-row ${props.arti[node].attr}`}>
 				<Col sm={2} className="arti-label">
 					<div>{node.toUpperCase()}</div>
-					<div>{props.arti[node].attr.toUpperCase()}</div>
+					<div>{attrTextConvert(props.arti[node].attr)}</div>
 				</Col>
 				<Col className="arti-descr">
 					<div>{props.arti[node].antler[Number(num) - 1]}</div>
@@ -46,6 +46,24 @@ function Artifact(props) {
 				</Col>
 			</Row>
 		);
+	};
+	const attrTextConvert = (txt) => {
+		switch (txt) {
+			case "atk":
+				return "공격력";
+			case "def":
+				return "방어럭";
+			case "hp":
+				return "HP";
+			case "crate":
+				return "치명타";
+			case "cdmg":
+				return "치명피해";
+			case "spd":
+				return "공격속도";
+			default:
+				return "";
+		}
 	};
 	return (
 		<>
