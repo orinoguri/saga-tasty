@@ -9,6 +9,7 @@ import About from "./components/About";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import SettingsContextProvider from "./contexts/SettingsContext";
+import Resources from "./components/Resources";
 
 function App() {
 	return (
@@ -19,9 +20,10 @@ function App() {
 				<Container className="app-container">
 					<main role="main">
 						<Routes>
-							<Route path="/saga-tasty/" element={<Landing />} />
-							<Route path="/saga-tasty/:id" element={<Soul />} />
-							<Route path="/saga-tasty/about" element={<About />} />
+							<Route path="/" element={<Landing />} />
+							<Route path="/:id" element={<Soul />} />
+							<Route path="/about" element={<About />} />
+							<Route path="/resources" element={<Resources />} />
 						</Routes>
 					</main>
 				</Container>

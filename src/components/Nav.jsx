@@ -15,7 +15,7 @@ function Nav() {
 			aria-label="Fourth navbar example"
 		>
 			<Container className="navbar-container">
-				<a className="navbar-brand" href="/saga-tasty">
+				<a className="navbar-brand" href="/">
 					<img src={sagatasty} alt="logo" className="navbar-logo" />
 				</a>
 				<button
@@ -35,7 +35,7 @@ function Nav() {
 							<button
 								className="nav-link px-2 text-black link-button"
 								id="home"
-								data-page="/saga-tasty"
+								data-page="/"
 								onClick={goToPage}
 							>
 								홈페이지
@@ -44,10 +44,19 @@ function Nav() {
 						<li className="nav-item">
 							<button
 								className="nav-link px-2 text-black link-button"
-								data-page="/saga-tasty/about"
+								data-page="/about"
 								onClick={goToPage}
 							>
 								메모
+							</button>
+						</li>
+						<li className="nav-item">
+							<button
+								className="nav-link px-2 text-black link-button"
+								data-page="/resources"
+								onClick={goToPage}
+							>
+								자원
 							</button>
 						</li>
 					</ul>

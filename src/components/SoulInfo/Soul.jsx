@@ -140,11 +140,7 @@ function Soul(props) {
 		<div className="soul-profile">
 			<Row>
 				<Col md={4} className="back-button">
-					<Button
-						variant="light"
-						onClick={onBackClick}
-						data-page="/saga-tasty"
-					>
+					<Button variant="light" onClick={onBackClick} data-page="/">
 						←뒤로
 					</Button>
 					<Button variant="light" onClick={toggleProfile}>
