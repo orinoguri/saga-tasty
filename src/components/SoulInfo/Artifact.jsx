@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Tabs, Tab, Row, Col } from "react-bootstrap";
 import "./soul.css";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 function Artifact(props) {
+	const { settings } = useContext(SettingsContext);
 	const artiTab = (num) => {
 		return (
 			<Tab eventKey={num} title={num}>
@@ -68,7 +70,7 @@ function Artifact(props) {
 	return (
 		<>
 			{props.arti && (
-				<Tabs defaultActiveKey="1" justify>
+				<Tabs defaultActiveKey={settings.artifact.toString()} justify>
 					{artiTab("1")}
 					{artiTab("2")}
 					{artiTab("3")}

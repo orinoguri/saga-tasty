@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import { Col, Row, Tabs, Tab, Button } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import defenseIcon from "../../assets/defenseicon.png";
@@ -7,8 +7,10 @@ import supportIcon from "../../assets/supporticon.png";
 import magicIcon from "../../assets/magicicon.png";
 import "./soul.css";
 import Artifact from "./Artifact";
+import { SettingsContext } from "../../contexts/SettingsContext";
 
 function Soul(props) {
+	const { settings, changeProfileShow } = useContext(SettingsContext);
 	const [card, setCard] = useState({
 		name: "",
 		id: "",
@@ -32,7 +34,6 @@ function Soul(props) {
 			5: { name: "", descr: "" },
 		},
 	});
-	const [profile, setProfile] = useState(true);
 	const params = useParams();
 	const { state } = useLocation();
 	const navigate = useNavigate();
@@ -121,7 +122,7 @@ function Soul(props) {
 	};
 
 	const toggleProfile = () => {
-		setProfile(!profile);
+		changeProfileShow(!settings.showProfile);
 	};
 
 	const scrollToTop = () => {
@@ -144,16 +145,16 @@ function Soul(props) {
 						onClick={onBackClick}
 						data-page="/saga-tasty"
 					>
-						Back
+						←뒤로
 					</Button>
 					<Button variant="light" onClick={toggleProfile}>
-						{profile ? "Hide" : "Show"}
+						{settings.showProfile ? "숨기기" : "보이기"}
 					</Button>
 				</Col>
 			</Row>
 			<h2>{card.name}</h2>
 			<Row>
-				{profile && (
+				{settings.showProfile && (
 					<Col md={4}>
 						{card.profile ? (
 							<>

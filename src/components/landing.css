@@ -6,12 +6,25 @@
    justify-content: center;
 }
 
+.heading-container {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   top: 0;
+   z-index: 10;
+   background-color: pink;
+   border-radius: 10px;
+}
+
 .navbar {
    font-size: x-large;
+   padding: 0;
 }
 
 .navbar-logo {
-   height: 80px;
+   height: 60px;
    width: auto;
 }
 
@@ -36,4 +49,33 @@
 .rarity-logo {
    width: 60px;
    height: auto;
+}
+
+.select-level {
+   width: 60px;
+   margin-right: 10px;
+}
+
+.hide-header {
+   background-color: pink;
+   border-color: pink;
+}
+
+.hide-header:hover {
+   background-color: rgb(255, 146, 164);
+   border-color: rgb(255, 146, 164)
+}
+
+.header-label {
+   margin: 0;
+   margin-right: 5px;
+}
+
+.show-button {
+   background-color: pink;
+   border-color: pink;
+   position: absolute;
+   z-index: 10;
+   left: 2%;
+
 }

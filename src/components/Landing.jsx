@@ -60,7 +60,7 @@ function Landing(props) {
 		[]
 	);
 	const mapSoulToCard = (soul, i) => {
-		return <SoulCard soul={soul} logo={logo} key={i} />;
+		return <SoulCard soul={soul} key={i} logo={logo} />;
 	};
 	return (
 		<div>
