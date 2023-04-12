@@ -215,7 +215,7 @@ function Soul(props) {
 				)}
 				<Col>
 					<Tabs defaultActiveKey="story" className="soul-tab" justify>
-						<Tab eventKey="story" title="이아기">
+						<Tab eventKey="story" title="이야기">
 							{card?.story?.["1"]?.descr ? (
 								<Tabs
 									defaultActiveKey="first"

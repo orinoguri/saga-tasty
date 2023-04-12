@@ -70,7 +70,11 @@ function Artifact(props) {
 	return (
 		<>
 			{props.arti && (
-				<Tabs defaultActiveKey={settings.artifact.toString()} justify>
+				<Tabs
+					defaultActiveKey={settings.artifact.toString()}
+					variant="pills"
+					justify
+				>
 					{artiTab("1")}
 					{artiTab("2")}
 					{artiTab("3")}
