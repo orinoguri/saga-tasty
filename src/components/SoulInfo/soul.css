@@ -76,6 +76,32 @@
    width: 80px;
 }
 
+.rare-5 {
+   border: 5px solid #ef0e14;
+   border-radius: 6px;
+
+}
+
+.rare-4 {
+   border: 5px solid #f99400;
+   border-radius: 6px;
+}
+
+.rare-3 {
+   border: 5px solid #cd39c8;
+   border-radius: 6px;
+}
+
+.rare-2 {
+   border: 5px solid #5571f0;
+   border-radius: 6px;
+}
+
+.rare-1 {
+   border: 5px solid #d9ddd7;
+   border-radius: 6px;
+}
+
 .atk {
    background-color: rgb(209, 255, 255);
 }

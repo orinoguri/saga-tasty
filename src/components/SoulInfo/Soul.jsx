@@ -181,7 +181,7 @@ function Soul(props) {
 								{card.id && (
 									<img
 										src={soulImg()}
-										className="soul-img"
+										className={`soul-img rare-${card.rarity}`}
 										width="80"
 										alt="soul"
 									/>
