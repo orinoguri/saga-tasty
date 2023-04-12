@@ -22,6 +22,9 @@ function SoulCard(props) {
 				return "";
 		}
 	};
+	const soulImg = () => {
+		return require(`../../assets/head/card_icon_${props.soul.id}.png`);
+	};
 	const onCardClick = (e) => {
 		let targetName = e.currentTarget.dataset.page;
 		const stateForTransport = { type: "Soul_View", payload: props.soul };
@@ -35,11 +38,20 @@ function SoulCard(props) {
 		>
 			<img
 				className="attr-img"
+				style={{ position: "absolute" }}
 				src={attrImg()}
-				width="40"
-				height="40"
+				width="20"
+				height="20"
 				alt="logo"
 			/>
+			<img
+				className="soul-img"
+				src={soulImg()}
+				width="60"
+				height="60"
+				alt="head"
+			/>
+
 			<div className="soul-name">{props.soul.name}</div>
 		</div>
 	);

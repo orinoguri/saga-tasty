@@ -21,3 +21,6 @@ Saga Tasty is a conservation project for the game Food Fantasy of various conten
 -  `git commit -m "info"`
 -  `git push`
 -  `npm run deploy` to update the github pages
+
+_`git checkout main`
+_`git pull origin main`

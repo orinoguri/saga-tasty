@@ -5,6 +5,11 @@ import defenseIcon from "../../assets/defenseicon.png";
 import strengthIcon from "../../assets/strengthicon.png";
 import supportIcon from "../../assets/supporticon.png";
 import magicIcon from "../../assets/magicicon.png";
+import splogo from "../../assets/splogo.png";
+import urlogo from "../../assets/urlogo.png";
+import srlogo from "../../assets/srlogo.png";
+import rlogo from "../../assets/rlogo.png";
+import mlogo from "../../assets/mlogo.png";
 import "./soul.css";
 import Artifact from "./Artifact";
 import { SettingsContext } from "../../contexts/SettingsContext";
@@ -77,18 +82,33 @@ function Soul(props) {
 				return "";
 		}
 	};
+	const rarityImg = () => {
+		switch (card?.rarity) {
+			case "1":
+				return mlogo;
+			case "2":
+				return rlogo;
+			case "3":
+				return srlogo;
+			case "4":
+				return urlogo;
+			case "5":
+				return splogo;
+			default:
+				return "";
+		}
+	};
+	const soulImg = () => {
+		return require(`../../assets/head/card_icon_${card.id}.png`);
+	};
 
 	function soulTable(label, info) {
 		return (
 			<>
-				<Row>
-					<Col sm={3} className="soul-info-label">
-						<div>{label}</div>
-					</Col>
-					<Col>
-						<div>{info}</div>
-					</Col>
-				</Row>
+				<div>
+					<span style={{ fontWeight: "700" }}>{label}: </span>
+					<span>{Array.isArray(info) ? info.join() : info}</span>
+				</div>
 			</>
 		);
 	}
@@ -148,20 +168,39 @@ function Soul(props) {
 					</Button>
 				</Col>
 			</Row>
-			<h2>{card.name}</h2>
+			<h2>
+				<img src={rarityImg()} className="rarity-img" alt="rare" />
+
+				{card.name}
+			</h2>
 			<Row>
 				{settings.showProfile && (
 					<Col md={4}>
 						{card.profile ? (
 							<>
-								<img src={attrImg()} alt="attr" />
-								<div>{card.attr}</div>
+								{card.id && (
+									<img
+										src={soulImg()}
+										className="soul-img"
+										width="80"
+										alt="soul"
+									/>
+								)}
+								<div></div>
+								<div>
+									<img
+										src={attrImg()}
+										className="attr-img"
+										alt="attr"
+									/>
+									<span>{card.attr}</span>
+								</div>
 								{soulTable("유형", card.profile.type)}
 								{soulTable("발원지", card.profile.origin)}
 								{soulTable("탄생 시기", card.profile.age)}
 								{soulTable("성격", card.profile.nature)}
 								{soulTable("키", card.profile.height)}
-								{soulTable("관계", "[WIP]")}
+								{soulTable("관계", card.profile.nexus)}
 								<hr />
 								<div style={{ fontWeight: "700" }}>모토</div>
 								<div>{card.profile.motto}</div>

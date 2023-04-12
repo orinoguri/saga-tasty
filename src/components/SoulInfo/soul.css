@@ -1,7 +1,8 @@
 .soul-card {
    display: inline-block;
    flex-direction: row;
-   margin: 10px;
+   margin: 6px;
+   margin-top: 20px;
    width: 80px;
    height: 80px;
    align-items: center;
@@ -9,8 +10,14 @@
 }
 
 .attr-img {
-   width: 30px;
+   width: 20px;
    height: auto;
+}
+
+.rarity-img {
+   width: 60px;
+   height: auto;
+   display: inline;
 }
 
 .tab-story {
@@ -31,7 +38,7 @@
 
 .soul-info-label {
    font-weight: 700;
-   text-align: start;
+
 }
 
 .voice-content {
@@ -63,6 +70,10 @@
 
 .row-one-label {
    margin-top: 10px;
+}
+
+.soul-image {
+   width: 80px;
 }
 
 .atk {

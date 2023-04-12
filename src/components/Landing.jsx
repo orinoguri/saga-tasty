@@ -13,7 +13,7 @@ import srlogo from "../assets/srlogo.png";
 import rlogo from "../assets/rlogo.png";
 import mlogo from "../assets/mlogo.png";
 
-function Landing(props) {
+function Landing() {
 	const [soulList, setSoulList] = useState({
 		sp: "",
 		ur: "",
@@ -64,15 +64,6 @@ function Landing(props) {
 	};
 	return (
 		<div>
-			{/* <Tabs className="landing-tabs">
-				<Tab eventKey="All" title="Food Souls"></Tab>
-				<Tab eventKey="Artifacts" title="Artifacts">
-					<p>Coming Soon</p>
-				</Tab>
-				<Tab eventKey="Future" title="Future">
-					<p>Coming Soon</p>
-				</Tab>
-			</Tabs> */}
 			<h1 style={{ marginBottom: "20px", marginTop: "20px" }}>
 				식신 백과사전
 			</h1>
