@@ -1,12 +1,15 @@
 .soul-card {
-   display: inline-block;
+   display: block;
    flex-direction: row;
    margin: 6px;
-   margin-top: 20px;
-   width: 80px;
-   height: 80px;
+   width: 70px;
+   height: auto;
    align-items: center;
    justify-content: center;
+}
+
+.soul-name {
+   font-size: small;
 }
 
 .attr-img {
@@ -38,7 +41,6 @@
 
 .soul-info-label {
    font-weight: 700;
-
 }
 
 .voice-content {
@@ -72,7 +74,7 @@
    margin-top: 10px;
 }
 
-.soul-image {
+.soul-img {
    width: 80px;
 }
 

@@ -5,6 +5,7 @@ import strengthIcon from "../../assets/strengthicon.png";
 import supportIcon from "../../assets/supporticon.png";
 import magicIcon from "../../assets/magicicon.png";
 import { useNavigate } from "react-router-dom";
+import blankSoul from "../../assets/card_icon_300264.png";
 
 function SoulCard(props) {
 	const navigate = useNavigate();
@@ -45,10 +46,9 @@ function SoulCard(props) {
 				alt="logo"
 			/>
 			<img
-				className="soul-img"
-				src={soulImg()}
+				className="rounded-circle"
+				src={soulImg() || blankSoul}
 				width="60"
-				height="60"
 				alt="head"
 			/>
 
@@ -57,4 +57,4 @@ function SoulCard(props) {
 	);
 }
 
-export default SoulCard;
+export default React.memo(SoulCard);

@@ -178,15 +178,14 @@ function Soul(props) {
 					<Col md={4}>
 						{card.profile ? (
 							<>
+								{" "}
 								{card.id && (
 									<img
 										src={soulImg()}
 										className={`soul-img rare-${card.rarity}`}
-										width="80"
 										alt="soul"
 									/>
 								)}
-								<div></div>
 								<div>
 									<img
 										src={attrImg()}
@@ -271,4 +270,4 @@ function Soul(props) {
 	);
 }
 
-export default Soul;
+export default React.memo(Soul);
